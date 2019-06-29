@@ -34,7 +34,8 @@ def _load_kube_config(in_cluster, cluster_context, config_file):
     if in_cluster:
         config.load_incluster_config()
     else:
-        config.load_kube_config(config_file=config_file, context=cluster_context)
+        # config.load_kube_config(config_file=config_file, context=cluster_context)
+        config.load_incluster_config()
     return client.CoreV1Api()
 
 
